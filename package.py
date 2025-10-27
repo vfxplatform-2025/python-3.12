@@ -29,6 +29,9 @@ tools = [
 build_command = "python {root}/rezbuild.py {install}"
 
 def commands():
+    env.PYTHON_VERSION = "3.12.10"
+    env.PYTHON_MAJOR_VERSION = "3"
+    env.PYTHON_MINOR_VERSION = "12"
     env.PATH.set("{root}/bin:{env.PATH}")
     env.LD_LIBRARY_PATH.prepend("{root}/lib")
     env.PIP_TARGET.set("{}/site-packages".format(env.REZ_PYTHON_LIB_ROOT))
